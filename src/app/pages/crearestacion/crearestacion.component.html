@@ -1,0 +1,128 @@
+  <div class="col-md-12">
+      <nb-card>
+        <nb-card-header><h5 class="grid-h">Agregar Estacion</h5></nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-md-6">
+              <form class="mt-3" [formGroup]="estacionForm" (ngSubmit)="agregarEstacion()">
+                <label for="inputNombre" class="label col-sm-3 col-form-label">Nombre Estacion</label>
+                <input type="text" formControlName="name" class="form-control form-control-lg" nbInput fullWidth placeholder="Nombre de la Estacion">
+                <div class="text-danger"
+                    *ngIf="estacionForm.get('name')?.hasError('required') && estacionForm.get('name')?.touched">
+                    <span>El nombre de la estación <strong>es obligatorio</strong></span>
+                </div>
+
+                <label for="inputUbicacion" class="label col-sm-3 col-form-label">Ubicacion</label>
+                <input type="text" formControlName="location" class="form-control form-control-lg" nbInput fullWidth placeholder="Coordenadas">
+                <div class="text-danger"
+                    *ngIf="estacionForm.get('location')?.hasError('required') && estacionForm.get('location')?.touched">
+                    <span>La ubicación <strong>es obligatoria</strong></span>
+                </div>
+
+                <label for="inputEstado" class="label col-sm-3 col-form-label">Estado</label>
+                <div class="col-md-12">
+                  <nb-card-body>
+                    <nb-select formControlName="status" class="col-md-12" selected="2" size="large">
+                      <nb-option value="true">ACTIVO</nb-option>
+                      <nb-option value="false">INACTIVO</nb-option>
+                    </nb-select>
+                    <div class="text-danger"
+                        *ngIf="estacionForm.get('status')?.hasError('required') && estacionForm.get('status')?.touched">
+                        <span>El estado <strong>es obligatorio</strong></span>
+                    </div>
+                  </nb-card-body>
+                </div>
+
+              </form>
+                <label for="inputFecha" class="label col-sm-3 col-form-label">Fecha de Registro</label>
+                <input type="text" nbInput fullWidth placeholder="DD/MM/AAAA">
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <nb-card>
+                  <nb-card-header>Sensores</nb-card-header>
+                  <nb-card-body>
+                    <nb-select selected=""class="col-md-12" size="large">
+                      <nb-option value="1">PH</nb-option>
+                      <nb-option value="2">TSS</nb-option>
+                      <nb-option value="3">CONDUCTIVIDAD</nb-option>
+                      <nb-option value="4">TEMPERATURA</nb-option>
+                    </nb-select>
+                  </nb-card-body>
+                  <nb-card-body>
+                    <nb-select selected=""class="col-md-12" size="large">
+                      <nb-option value="1">PH</nb-option>
+                      <nb-option value="2">TSS</nb-option>
+                      <nb-option value="3">CONDUCTIVIDAD</nb-option>
+                      <nb-option value="4">TEMPERATURA</nb-option>
+                    </nb-select>
+                  </nb-card-body>
+                  <nb-card-body>
+                    <nb-select selected=""class="col-md-12" size="large">
+                      <nb-option value="1">PH</nb-option>
+                      <nb-option value="2">TSS</nb-option>
+                      <nb-option value="3">CONDUCTIVIDAD</nb-option>
+                      <nb-option value="4">TEMPERATURA</nb-option>
+                    </nb-select>
+                  </nb-card-body>
+                  <nb-card-body>
+                    <nb-select selected=""class="col-md-12" size="large">
+                      <nb-option value="1">PH</nb-option>
+                      <nb-option value="2">TSS</nb-option>
+                      <nb-option value="3">CONDUCTIVIDAD</nb-option>
+                      <nb-option value="4">TEMPERATURA</nb-option>
+                    </nb-select>
+                  </nb-card-body>
+                </nb-card>
+              </div>
+            </div>
+          </div>
+          <div class="offset-sm-5 col-sm-9">
+        <button type="submit" [disabled]="estacionForm.invalid" class="btn btn-success btn-lg float-end" (click)="agregarEstacion()">ACEPTAR</button>
+          </div>
+        </nb-card-body>
+      </nb-card>
+  </div>
+
+
+
+<!-- <div class="container mt-5"> -->
+    <!-- <div class="row"> -->
+        <!-- <div class="col-lg-6 offset-lg-3"> -->
+            <!-- <div class="card"> -->
+                <!-- <div class="card-body text-center"> -->
+                    <!-- <form class="mt-3" [formGroup]="estacionForm" (ngSubmit)="agregarEstacion()"> -->
+                        <!-- <div class="mb-3"> -->
+                            <!-- <input type="text" formControlName="estacion" class="form-control form-control-lg" -->
+                                <!-- placeholder="Estacion"> -->
+                            <!-- <div class="text-danger" -->
+                                <!-- *ngIf="estacionForm.get('name')?.hasError('required') && estacionForm.get('name')?.touched"> -->
+                                <!-- <span>El nombre de la estación <strong>es obligatorio</strong></span> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- <div class="mb-3"> -->
+                            <!-- <input type="text" formControlName="location" class="form-control form-control-lg" -->
+                                <!-- placeholder="Ubicacion"> -->
+                            <!-- <div class="text-danger" -->
+                                <!-- *ngIf="estacionForm.get('location')?.hasError('required') && estacionForm.get('location')?.touched"> -->
+                                <!-- <span>La ubicación <strong>es obligatoria</strong></span> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- <div class="mb-3"> -->
+                            <!-- <input type="text" formControlName="status" class="form-control form-control-lg" -->
+                                <!-- placeholder="Estado"> -->
+                            <!-- <div class="text-danger" -->
+                                <!-- *ngIf="estacionForm.get('status')?.hasError('required') && estacionForm.get('status')?.touched"> -->
+                                <!-- <span>El estado <strong>es obligatorio</strong></span> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- <div class="mb-3"> -->
+                            <!-- <button routerLink="/" class="btn btn-secondary btn-lg float-start">VOLVER</button> -->
+                            <!-- <button type="submit" [disabled]="!estacionForm.valid" class="btn btn-success btn-lg float-end">ACEPTAR</button> -->
+                        <!-- </div> -->
+                    <!-- </form> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+<!-- </div> -->

@@ -1,0 +1,64 @@
+  <div class="col-md-12">
+      <nb-card>
+        <nb-card-header><h5 class="grid-h">Ver Estaciones</h5></nb-card-header>
+        <nb-card-body>
+          <div class="row">
+            <div class="col-md-12">
+                    <table *ngIf="verEstaciones.length > 0" class="table table-striped mt-3">
+                        <thead>
+                          <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Ubicación</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Registro</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let estacion of verEstaciones">
+                            <td>{{ estacion.name }}</td>
+                            <td>{{ estacion.location }}</td>
+                            <td>{{ estacion.status }}</td>
+                            <td>{{ estacion.created_at }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+            </div>
+          </div>
+          <div class="offset-sm-6 col-sm-12">
+            <button type="submit" nbButton status="primary">ACEPTAR</button>
+          </div>
+        </nb-card-body>
+      </nb-card>
+  </div>
+<!-- <div class="container mt-5"> -->
+  <!-- <span class="titulo">LISTADO DE ESTACIONES</span> -->
+    <!-- <div class="row"> -->
+        <!-- <div class="col-lg-8 offset-lg-2"> -->
+            <!-- <div class="card"> -->
+                <!-- <div class="card-body text-center"> -->
+                    <!-- <span class="titulo">LISTADO DE ESTACIONES</span> -->
+                    <!-- <button class="btn btn-success float-end" routerLink="/crear-producto">NUEVO</button> -->
+                    <!-- <table *ngIf="verEstaciones.length > 0" class="table table-striped mt-3"> -->
+                        <!-- <thead> -->
+                          <!-- <tr> -->
+                            <!-- <th scope="col">Nombre</th> -->
+                            <!-- <th scope="col">Ubicación</th> -->
+                            <!-- <th scope="col">Estado</th> -->
+                            <!-- <th scope="col">Registro</th> -->
+                          <!-- </tr> -->
+                        <!-- </thead> -->
+                        <!-- <tbody> -->
+                          <!-- <tr *ngFor="let estacion of verEstaciones"> -->
+                            <!-- <td>{{ estacion.name }}</td> -->
+                            <!-- <td>{{ estacion.location }}</td> -->
+                            <!-- <td>{{ estacion.status }}</td> -->
+                            <!-- <td>{{ estacion.created_at }}</td> -->
+                          <!-- </tr> -->
+                        <!-- </tbody> -->
+                      <!-- </table> -->
+                      <!-- <h5 style="text-align: start; margin-top: 10px;" *ngIf="verEstaciones.length == 0">No hay estaciones para mostrar</h5> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+<!-- </div> -->
