@@ -1,1 +1,33 @@
-<p>veralertas works!</p>
+<div class="col-md-12">
+    <nb-card>
+      <nb-card-header><h5 class="grid-h">Ver Alertas</h5></nb-card-header>
+      <nb-card-body>
+        <div class="row">
+          <div class="col-md-12">
+                  <table *ngIf="VerAlertas.length > 0" class="table table-striped mt-3">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Estacion</th>
+                          <th scope="col">Variable</th>
+                          <th scope="col">Umbral</th>
+                          <th scope="col">Validacion</th>
+                          <th scope="col">Observacion</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let alerta of VerAlertas">
+                          <td>{{ alerta.name }}</td>
+                          <td>{{ alerta.station }}</td>
+                          <td>{{ alerta.sensor }}</td>
+                          <td>{{ alerta.umbral }}</td>
+                          <td>{{ alerta.validation }}</td>
+                          <td>{{ alerta.observation }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+</div>
