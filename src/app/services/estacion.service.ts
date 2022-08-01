@@ -8,7 +8,7 @@ import { Estacion } from "../models/estacion";
 })
 
 export class EstacionService {
-  url = "http://192.168.20.153:4000/api/estaciones/";
+  url = "http://localhost:4000/api/estaciones/";
 
   constructor(private http: HttpClient) {}
 

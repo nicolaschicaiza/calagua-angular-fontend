@@ -1,19 +1,3 @@
-// import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { CrearalertaComponent } from './crearalerta.component';
-//
-//
-//
-// @NgModule({
-  // declarations: [
-    // CrearalertaComponent
-  // ],
-  // imports: [
-    // CommonModule
-  // ]
-// })
-// export class CrearalertaModule { }
-
 import { NgModule } from '@angular/core';
 import {
   NbActionsModule,
@@ -27,9 +11,10 @@ import {
   NbUserModule,
 } from '@nebular/theme';
 
+import { ReactiveFormsModule } from "@angular/forms";
 import { ThemeModule } from '../../@theme/theme.module';
 import { CrearalertaComponent } from './crearalerta.component';
-import { FormsModule as ngFormsModule } from '@angular/forms';
+import '@angular/compiler';
 
 @NgModule({
   imports: [
@@ -44,7 +29,7 @@ import { FormsModule as ngFormsModule } from '@angular/forms';
     NbDatepickerModule,
     NbSelectModule,
     NbIconModule,
-    ngFormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     CrearalertaComponent,

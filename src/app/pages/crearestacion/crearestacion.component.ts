@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import { Estacion } from "../../models/estacion";
 import { EstacionService } from "../../services/estacion.service";
 
 @Component({
-  selector: 'ngx-form-inputs',
+  selector: 'ngx-crearestacion',
   styleUrls: ['./crearestacion.component.scss'],
   templateUrl: './crearestacion.component.html',
 })
@@ -37,7 +37,7 @@ export class CrearestacionComponent {
     }
     console.warn(ESTACION);
     this._estacionService.guardarEstacion(ESTACION).subscribe(data => {
-      this.router.navigate(['/verestaciones']);
+      this.router.navigate(['/pages/verestaciones']);
     }, error => {
       console.warn(error);
       this.estacionForm.reset();

@@ -1,25 +1,26 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Sensor } from "../models/sensor";
+import { Alerta } from "../models/alerta";
 
 @Injectable({
   providedIn: "root"
 })
-export class SensorService {
-  url = "http://localhost:4000/api/sensores/";
+
+export class AlertaService {
+  url = "http://localhost:4000/api/alertas/";
 
   constructor(private http: HttpClient) {}
 
-  getSensores(): Observable<any> {
+  getAlertas(): Observable<any> {
     return this.http.get(this.url);
   }
 
-  guardarProducto(sensor: Sensor): Observable<any> {
-    return this.http.post(this.url, sensor);
+  guardarAlerta(alerta: Alerta): Observable<any> {
+    return this.http.post(this.url, alerta);
   }
 
-  obtenerSensor(id: string): Observable<any> {
+  obtenerAlerta(id: string): Observable<any> {
     return this.http.get(this.url + id);
   }
 }
