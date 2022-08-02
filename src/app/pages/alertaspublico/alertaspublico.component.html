@@ -1,1 +1,67 @@
-<p>alertaspublico works!</p>
+<div class="row">
+    <div class="col-md-12">
+      <nb-card>
+       <nb-card-header><h5 class="grid-h">Alertas</h5></nb-card-header>
+       <nb-card-body>
+        <div class="row">
+          <div class="col-md-4">
+            <nb-alert status="warning">Alerta 1<a class="small text-white stretched-link" routerLink="/pages/alertaspublico" (click)="ShowDiv1()">Ver Alerta</a></nb-alert>
+          
+            <nb-alert status="warning">Alerta 2<a class="small text-white stretched-link" routerLink="/pages/alertaspublico" (click)="ShowDiv2()">Ver Alerta</a></nb-alert>
+          
+          </div>
+          <div id="myDiv1" style="display:none" class="col-md-8">
+            <div class="form-group">
+            <nb-card status="info">
+            <nb-card-header><h5 class="grid-h">Alerta 1</h5><div align="right">Alerta por Ph</div></nb-card-header>                        
+            <nb-card-body>
+                <div class="col-md-12" >
+                    <b>Estacion:</b>
+                    <nb-card align="center">Río Molino 1</nb-card>
+                </div>
+                <div class="col-md-12">
+                    <b>Valor Ph:</b>
+                    <nb-card>
+                        <nb-card-body>
+                        <nb-progress-bar [value]="value" [status]="status">Ácido</nb-progress-bar>
+                        </nb-card-body>
+                    </nb-card>
+                </div>
+                <div class="col-md-12">
+                    <b>Observaciones:</b>
+                    <nb-card>‎</nb-card>
+                </div>
+            </nb-card-body>
+            </nb-card>
+            </div>
+          </div>
+
+          <div id="myDiv2" style="display:none" class="col-md-8">
+            <div class="form-group">
+            <nb-card status="info">
+            <nb-card-header><h5 class="grid-h">Alerta 2</h5><div align="right">Alerta por Ph</div></nb-card-header>
+            <nb-card-body>
+                <div class="col-md-12" >
+                    <b>Estacion:</b>
+                    <nb-card align="center">Río Molino 1</nb-card>
+                </div>
+                <div class="col-md-12">
+                    <b>Valor Ph:</b>
+                    <nb-card>
+                        <nb-card-body>
+                            <nb-progress-bar [value]="15" status="danger" [displayValue]="true"></nb-progress-bar>
+                        </nb-card-body>
+                    </nb-card>
+                </div>
+                <div class="col-md-12">
+                    <b>Observaciones:</b>
+                    <nb-card>‎</nb-card>
+                </div>
+            </nb-card-body>
+            </nb-card>
+            </div>
+          </div>
+        </div>
+       </nb-card-body>
+     </nb-card>
+    </div>
